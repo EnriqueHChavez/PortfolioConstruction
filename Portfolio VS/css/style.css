@@ -1,0 +1,268 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+Secondary Color (Orange): #e0b354;
+ */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #05386B;
+  --green-link: #489c79;
+  --white-color: #ffffff;
+  --orange-sun: #f76414;
+  --yellow-sun:#edc655;
+  --white-sun:  #fcffad;
+
+}
+
+
+
+ body {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    
+ }
+ h1 {
+   font-size: 30px;
+   font-weight: 700;
+   color: var(--primary-color);
+ }
+ 
+ h2 {
+   font-size: 24px;
+   font-weight: 700;
+ }
+ 
+ h3 {
+   font-size: 18px;
+   font-weight: 700;
+ }
+ a {
+   color: var(--secondary-color);
+ }
+ 
+ a:hover {
+   /* No underlining when hovering over a link */
+   text-decoration: none;
+ }
+ a:visited {
+   /* visited link */
+   color: var(--primary-color);
+ }
+ 
+ a:active {
+   /* selected link */
+   color: var(--green-link);
+ }
+ a:hover, a:focus {
+   /* No underlining when hovering over a link */
+   text-decoration: none;
+ }
+ button {
+   /* overwrites browser defaults and resets the border */
+   border: none;
+   /* takes the font from the outer container */
+   font-family: inherit;
+   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   text-decoration: none;
+   /*adds spacing to the button (this will be discussed more in-depth later) */
+   padding: 10px;
+   border-radius: 3px;
+   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+   
+ }
+ button:hover, button:focus {
+   /* lets the mouse appear as a hand when hovering over the button */
+   cursor: pointer;
+   /* reduces the opacity of the button to 80% */
+   opacity: 0.8;
+ }
+ .button__secondary {
+   background-color: #e0b354;
+   color: #2b2b2b;
+ }
+
+ p {
+    font-size:20px;
+    color: var(--primary-color);
+    
+ }
+
+.contact-info, table, .standard-label  {
+   color: var(--primary-c);
+   margin: auto;
+}
+
+#send-message {
+   background: var(--secondary-color);;
+   color:  var(--white-color);
+}
+.page-footer {
+  clear: both;
+}
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+
+}
+* {
+  box-sizing: border-box;
+}
+.page-footer {
+  clear: both;
+  display: flex;
+}
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+}
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  background-color:  var(--white-color);
+}
+page-header__item {
+  flex: 0 1 200px;
+}
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.navigation-list {
+  list-style-type: none;
+}
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+.dots {
+  list-style-type: none;
+ 
+}
+.project {
+  display: grid;
+}
+.project__item {
+  background-color: lightgray;
+  padding: 10px;
+}
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.logo-image {
+  width: 240px;
+  height: 120px;
+}
+section {
+  background-color: #FFF953 ;
+}
+.index-par {
+  padding-bottom: 60px;
+}
+
+@media all and (max-width: 500px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .project {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .project {
+    grid-gap: 10px;
+  }
+  .project__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+.button, button {
+  /* overwrites browser defaults */
+  /* resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* style button */
+  background-color: #357b70;
+  color:  var(--white-color);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.9s opacity;
+
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+.about-info {
+  text-align: center;
+  
+}
+@keyframes color-change {
+  from {
+    fill:var(--yellow-sun);
+  }
+  to {
+    fill: var(--orange-sun);
+  }
+}
+@keyframes color-change {
+  0% {
+    fill: var(--yellow-sun);
+  }
+  50% {
+    fill: var(--white-sun);
+  }
+  100% {
+    fill: var(--orange-sun);
+  }
+}
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+.berlin-illustration {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.aboutsec {
+ text-align: center;
+}
+
+.cityskyline {
+  text-align: center;
+ 
+}
+
+
